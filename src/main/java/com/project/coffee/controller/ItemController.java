@@ -19,8 +19,8 @@ public class ItemController {
         return itemService.create(item);
     }
 
-    @GetMapping("/getByCategory")
-    public List <Item> getByCategory(Category category) {
+    @GetMapping("/getByCategory/{category}")
+    public List <Item> getByCategory(@PathVariable String category) {
         return itemService.getByCategory(category);
     }
 
@@ -29,7 +29,7 @@ public class ItemController {
         return itemService.getAll();
     }
 
-    @PostMapping("/update")
+    @PutMapping("/update")
     public Item update (@RequestBody Item item) {
         return itemService.update(item);
     }
