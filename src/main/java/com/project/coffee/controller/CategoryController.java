@@ -27,8 +27,8 @@ public class CategoryController {
         return categoryService.update(category);
     }
 
-    @DeleteMapping("/delete")
-    public void deleteCategory (@RequestBody Category category) {
-        categoryService.deleteCategory(category);
+    @DeleteMapping("/delete/{id}")
+    public void deleteCategory (@PathVariable Long id) {
+        categoryService.deleteCategory(id);
     }
 }

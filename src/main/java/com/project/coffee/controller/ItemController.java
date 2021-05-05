@@ -34,8 +34,8 @@ public class ItemController {
         return itemService.update(item);
     }
 
-    @DeleteMapping("/delete")
-    public void deleteItem(@RequestBody Item item) {
-        itemService.deleteItem(item);
+    @DeleteMapping("/delete/{id}")
+    public void deleteItem(@PathVariable Long id) {
+        itemService.deleteItem(id);
     }
 }

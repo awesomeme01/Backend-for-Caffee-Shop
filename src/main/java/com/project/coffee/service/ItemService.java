@@ -10,6 +10,6 @@ public interface ItemService {
     List <Item> getByCategory(String category);
     List <Item> getAll();
     Item update (Item item);
-    void deleteItem(Item item);
+    void deleteItem(Long id);
 
 }
