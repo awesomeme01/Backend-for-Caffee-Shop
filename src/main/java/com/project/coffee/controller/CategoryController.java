@@ -23,6 +23,12 @@ public class CategoryController {
         return categoryService.getAll();
     }
 
+    @GetMapping("/getById/{id}")
+    public Category getById(@PathVariable Long id) {
+        return categoryService.getById(id);
+    }
+
+
     @PostMapping("/update")
     public Category update (@RequestBody Category category) {
         return categoryService.update(category);

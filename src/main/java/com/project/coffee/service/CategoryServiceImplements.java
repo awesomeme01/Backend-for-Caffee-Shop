@@ -18,6 +18,11 @@ public class CategoryServiceImplements implements CategoryService {
     }
 
     @Override
+    public Category getById(Long id) {
+        return categoryRepository.findById(id).get();
+    }
+
+    @Override
     public List<Category> getAll() {
         return categoryRepository.findAll();
     }
