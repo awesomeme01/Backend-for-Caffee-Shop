@@ -1,5 +1,8 @@
 package com.project.coffee.model;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,9 +16,10 @@ public class Category {
     @Column(name = "picture_URL")
     private String pictureURL;
 
-    @ManyToOne
-    @JoinColumn(name = "subCategory")
-    private Category subCategory;
+//    @ManyToOne
+//    @OnDelete(action = OnDeleteAction.NO_ACTION)
+//    @JoinColumn(name = "subCategory")
+//    private Category subCategory;
 
 
     //Constructor
