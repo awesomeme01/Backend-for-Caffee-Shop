@@ -1,5 +1,8 @@
 package com.project.coffee.model;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 
 @Entity
@@ -20,6 +23,8 @@ public class Item {
     private String pictureURL;
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+
     private Category category;
     @Column(name = "discount")
     private Double discount;

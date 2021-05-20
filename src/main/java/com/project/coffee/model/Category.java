@@ -13,6 +13,10 @@ public class Category {
     @Column(name = "picture_URL")
     private String pictureURL;
 
+    @ManyToOne
+    @JoinColumn(name = "subCategory")
+    private Category subCategory;
+
 
     //Constructor
     public Category(String name, String pictureURL) {
