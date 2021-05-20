@@ -21,11 +21,12 @@ public class Item {
     private Double price;
     @Column(name = "picture_URL")
     private String pictureURL;
-    @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
 
+    @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(name = "category_id", nullable = false)
     private Category category;
+
     @Column(name = "discount")
     private Double discount;
 
