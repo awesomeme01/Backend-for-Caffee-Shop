@@ -1,4 +1,4 @@
 package com.project.coffee.model;
 
-public class UserRole {
-}
+//public class UserRole {
+//}
