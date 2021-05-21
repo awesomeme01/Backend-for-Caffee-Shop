@@ -21,7 +21,12 @@ public class ItemServiceImplements implements ItemService {
 
     @Override
     public List<Item> getByCategory(String category) {
-        return itemRepository.findAll().stream().filter(x -> x.getCategory().getName().equals(category)).collect(Collectors.toList());
+        return itemRepository.findAll().stream().filter(x -> {
+            if(x.getCategory().getName() != null){
+                return x.getCategory().getName().equals(category);
+            }
+            return false;
+        }).collect(Collectors.toList());
     }
 
     @Override

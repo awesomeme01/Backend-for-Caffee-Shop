@@ -38,4 +38,12 @@ public class CategoryController {
     public void deleteCategory (@PathVariable Long id) {
         categoryService.deleteCategory(id);
     }
+
+    @PostMapping("/setSubCategory/{parentId}/{childId}")
+    public Category setSubCategory(@PathVariable Long parentId, @PathVariable Long childId){
+        Category parent = categoryService.getById(parentId);
+        Category child = categoryService.getById(childId);
+        parent.setSubCategory(child);
+        return categoryService.update(parent);
+    }
 }

@@ -16,10 +16,10 @@ public class Category {
     @Column(name = "picture_URL")
     private String pictureURL;
 
-//    @ManyToOne
-//    @OnDelete(action = OnDeleteAction.NO_ACTION)
-//    @JoinColumn(name = "subCategory")
-//    private Category subCategory;
+    @ManyToOne
+    @OnDelete(action = OnDeleteAction.NO_ACTION)
+    @JoinColumn(name = "subCategory")
+    private Category subCategory;
 
 
     //Constructor
@@ -56,5 +56,14 @@ public class Category {
 
     public void setPictureURL(String pictureURL) {
         this.pictureURL = pictureURL;
+    }
+
+
+    public Category getSubCategory() {
+        return subCategory;
+    }
+
+    public void setSubCategory(Category subCategory) {
+        this.subCategory = subCategory;
     }
 }
