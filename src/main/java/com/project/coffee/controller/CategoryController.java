@@ -43,7 +43,15 @@ public class CategoryController {
     public Category setSubCategory(@PathVariable Long parentId, @PathVariable Long childId){
         Category parent = categoryService.getById(parentId);
         Category child = categoryService.getById(childId);
-        parent.setSubCategory(child);
+        if(parent!=null){
+            if(!parent.getSubCategoryStatus()){
+                parent.setSubCategory(child);
+                child.setSubCategoryStatus(true);
+            }
+        }
+
+
         return categoryService.update(parent);
     }
+
 }

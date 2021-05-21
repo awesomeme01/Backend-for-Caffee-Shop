@@ -21,6 +21,9 @@ public class Category {
     @JoinColumn(name = "subCategory")
     private Category subCategory;
 
+    @Column(name = "isSubCategoryStatus")
+    private Boolean isSubCategoryStatus;
+
 
     //Constructor
     public Category(String name, String pictureURL) {
@@ -29,6 +32,7 @@ public class Category {
     }
 
     public Category() {
+        this.setSubCategoryStatus(false);
     }
 
     //Getter
@@ -65,5 +69,13 @@ public class Category {
 
     public void setSubCategory(Category subCategory) {
         this.subCategory = subCategory;
+    }
+
+    public Boolean getSubCategoryStatus() {
+        return isSubCategoryStatus;
+    }
+
+    public void setSubCategoryStatus(Boolean subCategoryStatus) {
+        isSubCategoryStatus = subCategoryStatus;
     }
 }
