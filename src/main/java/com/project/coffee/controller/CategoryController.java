@@ -45,7 +45,7 @@ public class CategoryController {
         Category child = categoryService.getById(childId);
         if(parent!=null){
             if(!parent.getSubCategoryStatus()){
-                parent.setSubCategory(child);
+                parent.addSubCategory(child);
                 child.setSubCategoryStatus(true);
             }
         }
