@@ -17,7 +17,7 @@ public class Category {
     @Column(name = "picture_URL")
     private String pictureURL;
 
-    @OneToMany(mappedBy = "category")
+    @OneToMany(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.NO_ACTION)
     @JoinColumn(name = "subCategory")
     private Set<Category> subCategory;
