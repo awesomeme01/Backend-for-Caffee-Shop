@@ -30,6 +30,11 @@ public class ItemController {
         return itemService.getAll();
     }
 
+    @GetMapping("/getById/{id}")
+    public Item getById(@PathVariable Long id){
+        return itemService.getById(id);
+    }
+
     @PutMapping("/update")
     public Item update (@RequestBody Item item) {
         return itemService.update(item);

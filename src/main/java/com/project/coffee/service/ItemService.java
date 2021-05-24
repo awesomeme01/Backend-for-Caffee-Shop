@@ -11,5 +11,5 @@ public interface ItemService {
     List <Item> getAll();
     Item update (Item item);
     void deleteItem(Long id);
-
+    Item getById(Long id);
 }

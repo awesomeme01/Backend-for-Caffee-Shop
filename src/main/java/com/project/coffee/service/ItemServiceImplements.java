@@ -30,6 +30,11 @@ public class ItemServiceImplements implements ItemService {
     }
 
     @Override
+    public Item getById(Long id) {
+        return itemRepository.findById(id).get();
+    }
+
+    @Override
     public List<Item> getAll() {
         return itemRepository.findAll();
     }
