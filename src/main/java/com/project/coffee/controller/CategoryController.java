@@ -5,6 +5,7 @@ import com.project.coffee.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -16,7 +17,13 @@ public class CategoryController {
 
     @PostMapping("/create")
     public Category create(@RequestBody Category category){
-        return categoryService.create(category);
+        try{
+            return categoryService.create(category);
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+            System.out.println(Arrays.toString(ex.getStackTrace()));
+            return null;
+        }
     }
     @GetMapping("/getAll")
     public List <Category> getAll() {

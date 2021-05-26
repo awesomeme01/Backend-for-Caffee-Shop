@@ -1,6 +1,5 @@
 package com.project.coffee.controller;
 
-import com.project.coffee.model.Category;
 import com.project.coffee.model.Item;
 import com.project.coffee.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;

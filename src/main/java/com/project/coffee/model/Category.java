@@ -26,6 +26,8 @@ public class Category {
     private Boolean isSubCategoryStatus;
 
 
+
+
     //Constructor
     public Category(String name, String pictureURL) {
         this.name = name;

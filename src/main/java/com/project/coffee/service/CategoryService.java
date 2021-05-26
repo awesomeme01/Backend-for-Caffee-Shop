@@ -8,6 +8,6 @@ public interface CategoryService {
     Category create (Category category);
     List <Category> getAll();
     Category getById(Long id);
-    Category update (Category category);
+    Category  update (Category category);
     void deleteCategory (Long id);
 }
