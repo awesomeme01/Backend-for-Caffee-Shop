@@ -25,13 +25,13 @@ public class MainController {
     ItemService itemService;
 
     @GetMapping("/getUpdate")
-    public MainWrapper getUpdate(){
+    public List<CategoryWrapper> getUpdate(){
         List<Category> allCategories = categoryService.getAll();
         List<CategoryWrapper> categoryWrappers = new ArrayList<>();
         for(Category c: allCategories){
             categoryWrappers.add(new CategoryWrapper(c.getId(),c.getName(),c.getPictureURL(),c.getSubCategory(),c.getSubCategoryStatus(),itemService.getByCategory(c.getName())));
         }
 
-        return new MainWrapper(categoryWrappers);
+        return categoryWrappers;
     }
 }
