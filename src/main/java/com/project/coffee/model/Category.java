@@ -14,6 +14,11 @@ public class Category {
     private Long id;
     @Column(name = "name")
     private String name;
+    @Column(name = "name_ru")
+    private String nameRU;
+    @Column(name = "name_tr")
+    private String nameTR;
+
     @Column(name = "picture_URL")
     private String pictureURL;
 
@@ -83,5 +88,21 @@ public class Category {
     }
     public void addSubCategory(Category category){
         this.subCategory.add(category);
+    }
+
+    public String getNameRU() {
+        return nameRU;
+    }
+
+    public void setNameRU(String nameRU) {
+        this.nameRU = nameRU;
+    }
+
+    public String getNameTR() {
+        return nameTR;
+    }
+
+    public void setNameTR(String nameTR) {
+        this.nameTR = nameTR;
     }
 }

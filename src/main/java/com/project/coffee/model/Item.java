@@ -13,8 +13,16 @@ public class Item {
     private Long id;
     @Column(name = "name")
     private String name;
+    @Column(name = "name_ru")
+    private String nameRU;
+    @Column(name = "name_tr")
+    private String nameTR;
     @Column(name = "description")
     private String description;
+    @Column(name = "description_ru")
+    private String descriptionRU;
+    @Column(name = "description_tr")
+    private String descriptionTR;
     @Column(name = "weight")
     private String weight;
     @Column(name = "price")
@@ -109,5 +117,35 @@ public class Item {
         this.discount = discount;
     }
 
+    public String getNameRU() {
+        return nameRU;
+    }
 
+    public void setNameRU(String nameRU) {
+        this.nameRU = nameRU;
+    }
+
+    public String getNameTR() {
+        return nameTR;
+    }
+
+    public void setNameTR(String nameTR) {
+        this.nameTR = nameTR;
+    }
+
+    public String getDescriptionRU() {
+        return descriptionRU;
+    }
+
+    public void setDescriptionRU(String descriptionRU) {
+        this.descriptionRU = descriptionRU;
+    }
+
+    public String getDescriptionTR() {
+        return descriptionTR;
+    }
+
+    public void setDescriptionTR(String descriptionTR) {
+        this.descriptionTR = descriptionTR;
+    }
 }
