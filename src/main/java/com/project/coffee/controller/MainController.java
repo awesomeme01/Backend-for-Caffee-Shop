@@ -29,7 +29,7 @@ public class MainController {
         List<Category> allCategories = categoryService.getAll();
         List<CategoryWrapper> categoryWrappers = new ArrayList<>();
         for(Category c: allCategories){
-            categoryWrappers.add(new CategoryWrapper(c.getId(),c.getName(),c.getPictureURL(),c.getSubCategory(),c.getSubCategoryStatus(),itemService.getByCategory(c.getName())));
+            categoryWrappers.add(new CategoryWrapper(c.getId(),c.getName(),c.getPictureURL(),c.getSubCategory(),c.getSubCategoryStatus(),itemService.getByCategory(c.getName()),c.getNameRU(),c.getNameTR()));
         }
 
         return categoryWrappers;

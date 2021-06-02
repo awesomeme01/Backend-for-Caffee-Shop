@@ -12,6 +12,8 @@ import java.util.Set;
 public class CategoryWrapper {
     private Long id;
     private String name;
+    private String nameRU;
+    private String nameTR;
     private String pictureURL;
     private Set<Category> subCategory;
     private Boolean isSubCategoryStatus;
@@ -21,13 +23,15 @@ public class CategoryWrapper {
     public CategoryWrapper() {
     }
 
-    public CategoryWrapper(Long id, String name, String pictureURL, Set<Category> subCategory, Boolean isSubCategoryStatus, List<Item> items) {
+    public CategoryWrapper(Long id, String name, String pictureURL, Set<Category> subCategory, Boolean isSubCategoryStatus, List<Item> items, String nameRU, String nameTR) {
         this.id = id;
         this.name = name;
         this.pictureURL = pictureURL;
         this.subCategory = subCategory;
         this.isSubCategoryStatus = isSubCategoryStatus;
         this.items = items;
+        this.nameRU = nameRU;
+        this.nameTR = nameTR;
     }
 
     public Long getId() {
@@ -76,6 +80,22 @@ public class CategoryWrapper {
 
     public void setItems(List<Item> items) {
         this.items = items;
+    }
+
+    public String getNameRU() {
+        return nameRU;
+    }
+
+    public void setNameRU(String nameRU) {
+        this.nameRU = nameRU;
+    }
+
+    public String getNameTR() {
+        return nameTR;
+    }
+
+    public void setNameTR(String nameTR) {
+        this.nameTR = nameTR;
     }
 
     @Override
