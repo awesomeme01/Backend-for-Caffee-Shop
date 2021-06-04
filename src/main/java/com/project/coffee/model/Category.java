@@ -18,7 +18,8 @@ public class Category {
     private String nameRU;
     @Column(name = "name_tr")
     private String nameTR;
-
+    @Column(name = "name_kg")
+    private String nameKG;
     @Column(name = "picture_URL")
     private String pictureURL;
 
@@ -41,6 +42,14 @@ public class Category {
 
     public Category() {
         this.setSubCategoryStatus(false);
+    }
+
+    public String getNameKG() {
+        return nameKG;
+    }
+
+    public void setNameKG(String nameKG) {
+        this.nameKG = nameKG;
     }
 
     //Getter

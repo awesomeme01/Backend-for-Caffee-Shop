@@ -17,12 +17,16 @@ public class Item {
     private String nameRU;
     @Column(name = "name_tr")
     private String nameTR;
+    @Column(name = "name_kg")
+    private String nameKG;
     @Column(name = "description")
     private String description;
     @Column(name = "description_ru")
     private String descriptionRU;
     @Column(name = "description_tr")
     private String descriptionTR;
+    @Column(name = "description_kg")
+    private String descriptionKG;
     @Column(name = "weight")
     private String weight;
     @Column(name = "price")
@@ -89,6 +93,14 @@ public class Item {
         this.id = id;
     }
 
+    public String getDescriptionKG() {
+        return descriptionKG;
+    }
+
+    public void setDescriptionKG(String descriptionKG) {
+        this.descriptionKG = descriptionKG;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -125,8 +137,17 @@ public class Item {
         this.nameRU = nameRU;
     }
 
+
     public String getNameTR() {
         return nameTR;
+    }
+
+    public String getNameKG() {
+        return nameKG;
+    }
+
+    public void setNameKG(String nameKG) {
+        this.nameKG = nameKG;
     }
 
     public void setNameTR(String nameTR) {

@@ -14,6 +14,7 @@ public class CategoryWrapper {
     private String name;
     private String nameRU;
     private String nameTR;
+    private String nameKG;
     private String pictureURL;
     private Set<Category> subCategory;
     private Boolean isSubCategoryStatus;
@@ -23,7 +24,7 @@ public class CategoryWrapper {
     public CategoryWrapper() {
     }
 
-    public CategoryWrapper(Long id, String name, String pictureURL, Set<Category> subCategory, Boolean isSubCategoryStatus, List<Item> items, String nameRU, String nameTR) {
+    public CategoryWrapper(Long id, String name, String pictureURL, Set<Category> subCategory, Boolean isSubCategoryStatus, List<Item> items, String nameRU, String nameTR, String nameKG) {
         this.id = id;
         this.name = name;
         this.pictureURL = pictureURL;
@@ -32,6 +33,7 @@ public class CategoryWrapper {
         this.items = items;
         this.nameRU = nameRU;
         this.nameTR = nameTR;
+        this.nameKG = nameKG;
     }
 
     public Long getId() {
@@ -52,6 +54,14 @@ public class CategoryWrapper {
 
     public String getPictureURL() {
         return pictureURL;
+    }
+
+    public String getNameKG() {
+        return nameKG;
+    }
+
+    public void setNameKG(String nameKG) {
+        this.nameKG = nameKG;
     }
 
     public void setPictureURL(String pictureURL) {
