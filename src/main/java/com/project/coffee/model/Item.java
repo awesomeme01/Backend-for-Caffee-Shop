@@ -37,7 +37,7 @@ public class Item {
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "category_id")
-    private Category category;
+    private Category categoryName;
 
     @Column(name = "discount")
     private Double discount;
@@ -49,9 +49,25 @@ public class Item {
         this.weight = weight;
         this.price = price;
         this.pictureURL = pictureURL;
-        this.category = category;
+        this.categoryName = category;
         this.discount = discount;
     }
+
+    public Item(String name, String nameRU, String nameTR, String nameKG, String description, String descriptionRU, String descriptionTR, String descriptionKG, String weight, Double price, String pictureURL, Category category) {
+        this.name = name;
+        this.nameRU = nameRU;
+        this.nameTR = nameTR;
+        this.nameKG = nameKG;
+        this.description = description;
+        this.descriptionRU = descriptionRU;
+        this.descriptionTR = descriptionTR;
+        this.descriptionKG = descriptionKG;
+        this.weight = weight;
+        this.price = price;
+        this.pictureURL = pictureURL;
+        this.categoryName = category;
+    }
+
     public Item() {
     }
 
@@ -81,7 +97,7 @@ public class Item {
     }
 
     public Category getCategory() {
-        return category;
+        return categoryName;
     }
 
     public Double getDiscount() {
@@ -122,7 +138,7 @@ public class Item {
     }
 
     public void setCategory(Category category) {
-        this.category = category;
+        this.categoryName = category;
     }
 
     public void setDiscount(Double discount) {

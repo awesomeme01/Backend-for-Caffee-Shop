@@ -1,6 +1,9 @@
 package com.project.coffee.controller;
 
+import com.project.coffee.helper.ItemForScript;
+import com.project.coffee.model.Category;
 import com.project.coffee.model.Item;
+import com.project.coffee.service.CategoryService;
 import com.project.coffee.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,10 +16,30 @@ import java.util.List;
 public class ItemController {
     @Autowired
     ItemService itemService;
+    @Autowired
+    CategoryService categoryService;
 
     @PostMapping("/create")
     public Item create (@RequestBody Item item) {
         return itemService.create(item);
+    }
+
+    @PostMapping("/createFromScript")
+    public Item createFromScript(@RequestBody ItemForScript item){
+        Category category = categoryService.findByName(item.getCategory());
+        Item item1 = new Item(item.getName(),
+                item.getNameRU(),
+                item.getNameTR(),
+                item.getNameKG(),
+                item.getDescription(),
+                item.getDescriptionRU(),
+                item.getDescriptionTR(),
+                item.getDescriptionKG(),
+                item.getWeight(),
+                item.getPrice(),
+                item.getPictureURL(),
+                category);
+        return itemService.create(item1);
     }
 
     @GetMapping("/getByCategory/{category}")
