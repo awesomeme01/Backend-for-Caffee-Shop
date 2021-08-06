@@ -30,10 +30,7 @@ public class MainController {
     public List<CategoryWrapper> getUpdate(){
         try{
             List<Category> allCategories = categoryService.getAll();
-            allCategories.stream().map(x->{
-                x.setOrderNumber(x.getId());
-                return x;
-            });
+            allCategories = allCategories.stream().peek(x-> x.setOrderNumber(x.getId())).collect(Collectors.toList());
             List<Category> sortedCategories = allCategories.stream().sorted(Comparator.comparingLong(Category::getOrderNumber)).collect(Collectors.toList());
             List<CategoryWrapper> categoryWrappers = new ArrayList<>();
             for(Category c: sortedCategories) {
@@ -42,6 +39,7 @@ public class MainController {
             return categoryWrappers;
         }
         catch (Exception ex){
+            System.out.println("Error");
             return null;
         }
     }
