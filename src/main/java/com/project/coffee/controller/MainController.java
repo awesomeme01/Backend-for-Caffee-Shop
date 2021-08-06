@@ -28,12 +28,17 @@ public class MainController {
 
     @GetMapping("/getUpdate")
     public List<CategoryWrapper> getUpdate(){
-        List<Category> allCategories = categoryService.getAll();
-        List<Category> sortedCategories = allCategories.stream().sorted(Comparator.comparingInt(Category::getOrderNumber)).collect(Collectors.toList());
-        List<CategoryWrapper> categoryWrappers = new ArrayList<>();
-        for(Category c: sortedCategories) {
-            categoryWrappers.add(new CategoryWrapper(c.getId(), c.getName(), c.getPictureURL(), c.getSubCategory(), c.getSubCategoryStatus(), itemService.getByCategory(c.getName()), c.getNameRU(), c.getNameTR(), c.getNameKG()));
+        try{
+            List<Category> allCategories = categoryService.getAll();
+            List<Category> sortedCategories = allCategories.stream().sorted(Comparator.comparingInt(Category::getOrderNumber)).collect(Collectors.toList());
+            List<CategoryWrapper> categoryWrappers = new ArrayList<>();
+            for(Category c: sortedCategories) {
+                categoryWrappers.add(new CategoryWrapper(c.getId(), c.getName(), c.getPictureURL(), c.getSubCategory(), c.getSubCategoryStatus(), itemService.getByCategory(c.getName()), c.getNameRU(), c.getNameTR(), c.getNameKG()));
+            }
+            return categoryWrappers;
         }
-        return categoryWrappers;
+        catch (Exception ex){
+            return null;
+        }
     }
 }
