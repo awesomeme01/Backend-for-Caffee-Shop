@@ -26,20 +26,26 @@ public class ItemController {
 
     @PostMapping("/createFromScript")
     public Item createFromScript(@RequestBody ItemForScript item){
-        Category category = categoryService.findByName(item.getCategory());
-        Item item1 = new Item(item.getName(),
-                item.getNameRU(),
-                item.getNameTR(),
-                item.getNameKG(),
-                item.getDescription(),
-                item.getDescriptionRU(),
-                item.getDescriptionTR(),
-                item.getDescriptionKG(),
-                item.getWeight(),
-                item.getPrice(),
-                item.getPictureURL(),
-                category);
-        return itemService.create(item1);
+        try{
+            Category category = categoryService.findByName(item.getCategory());
+            Item item1 = new Item(item.getName(),
+                    item.getNameRU(),
+                    item.getNameTR(),
+                    item.getNameKG(),
+                    item.getDescription(),
+                    item.getDescriptionRU(),
+                    item.getDescriptionTR(),
+                    item.getDescriptionKG(),
+                    item.getWeight(),
+                    item.getPrice(),
+                    item.getPictureURL(),
+                    category);
+            return itemService.create(item1);
+        }catch (Exception ex){
+            System.out.println(ex);
+            return null;
+
+        }
     }
 
     @GetMapping("/getByCategory/{category}")

@@ -16,6 +16,9 @@ public class ItemServiceImplements implements ItemService {
 
     @Override
     public Item create(Item item) {
+        if(itemRepository.findAll().stream().anyMatch(x->x.getName().equals(item.getName()))){
+            return null;
+        }
         return itemRepository.save(item);
     }
 
