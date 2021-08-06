@@ -23,7 +23,7 @@ public class Category {
     @Column(name = "picture_URL")
     private String pictureURL;
     @Column(name = "orderNumber")
-    private Integer orderNumber;
+    private Long orderNumber;
 
     @OneToMany(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.NO_ACTION)
@@ -117,11 +117,11 @@ public class Category {
         this.nameTR = nameTR;
     }
 
-    public Integer getOrderNumber() {
+    public Long getOrderNumber() {
         return orderNumber;
     }
 
-    public void setOrderNumber(Integer orderNumber) {
+    public void setOrderNumber(Long orderNumber) {
         this.orderNumber = orderNumber;
     }
 }
