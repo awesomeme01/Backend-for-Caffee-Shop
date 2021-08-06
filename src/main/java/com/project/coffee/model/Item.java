@@ -34,6 +34,7 @@ public class Item {
     @Column(name = "picture_URL")
     private String pictureURL;
 
+
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "category_id")

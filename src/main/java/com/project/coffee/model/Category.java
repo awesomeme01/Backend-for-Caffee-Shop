@@ -22,6 +22,8 @@ public class Category {
     private String nameKG;
     @Column(name = "picture_URL")
     private String pictureURL;
+    @Column(name = "orderNumber")
+    private Integer orderNumber;
 
     @OneToMany(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.NO_ACTION)
@@ -113,5 +115,13 @@ public class Category {
 
     public void setNameTR(String nameTR) {
         this.nameTR = nameTR;
+    }
+
+    public Integer getOrderNumber() {
+        return orderNumber;
+    }
+
+    public void setOrderNumber(Integer orderNumber) {
+        this.orderNumber = orderNumber;
     }
 }
