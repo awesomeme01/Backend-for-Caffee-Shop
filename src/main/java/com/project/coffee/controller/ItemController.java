@@ -23,6 +23,18 @@ public class ItemController {
     public Item create (@RequestBody Item item) {
         return itemService.create(item);
     }
+    
+    @DeleteMapping("/deleteItemsByCategory/{category}")
+    public String deleteByItemsByCategory(@PathVariable String category){
+        try{
+            List<Item> items = itemService.getByCategory(category);
+            for(Item item : items){
+                itemService.deleteItem(item.getId());
+            }
+        }catch(Exception ex){
+            return ex.toString();    
+        }
+    }
 
     @PostMapping("/createFromScript")
     public Item createFromScript(@RequestBody ItemForScript item){
