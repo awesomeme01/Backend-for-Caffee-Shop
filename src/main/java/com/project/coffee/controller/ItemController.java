@@ -31,6 +31,7 @@ public class ItemController {
             for(Item item : items){
                 itemService.deleteItem(item.getId());
             }
+            return "items have been deleted successfully";
         }catch(Exception ex){
             return ex.toString();    
         }

@@ -16,8 +16,11 @@ public class ItemServiceImplements implements ItemService {
 
     @Override
     public Item create(Item item) {
-        if(itemRepository.findAll().stream().anyMatch(x->x.getName().equals(item.getName()))){
-            return null;
+        List<Item> items = itemRepository.findAll();
+        for(Item i : items){
+            if(i.getName().equals(item.getName())){
+                item.setId(i.getId());
+            }
         }
         return itemRepository.save(item);
     }
