@@ -40,7 +40,7 @@ public class MainController {
         }
         catch (Exception ex){
             System.out.println("Error: " + ex.getMessage());
-            return new List<CategoryWrapper>();
+            return new ArrayList<CategoryWrapper>();
         }
     }
 }
