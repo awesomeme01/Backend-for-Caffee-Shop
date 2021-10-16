@@ -39,8 +39,8 @@ public class MainController {
             return categoryWrappers;
         }
         catch (Exception ex){
-            System.out.println("Error");
-            return null;
+            System.out.println("Error: " + ex.getMessage());
+            return new List<CategoryWrapper>();
         }
     }
 }
